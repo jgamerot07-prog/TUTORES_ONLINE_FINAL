@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Buscar tutores — Tutores On-Line</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-title" style="margin-bottom: 1.5rem;">
+        <h1>Encuentra a tu tutor ideal</h1>
+        <p>Filtra por materia, modalidad, ciudad y ordena por calificacion o precio.</p>
+      </div>
+
+      <form class="search-bar" id="form-filtros">
+        <div class="search-grid">
+          <div class="field">
+            <label for="q">Buscar por nombre o materia</label>
+            <input type="search" id="q" name="q" placeholder="Ej: Laura, Calculo, Python..." />
+          </div>
+          <div class="field">
+            <label for="materia">Materia</label>
+            <select id="materia" name="materia"><option value="">Todas</option></select>
+          </div>
+          <div class="field">
+            <label for="modalidad">Modalidad</label>
+            <select id="modalidad" name="modalidad">
+              <option value="">Cualquiera</option>
+              <option value="VIRTUAL">Virtual</option>
+              <option value="PRESENCIAL">Presencial</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="ordenar">Ordenar por</label>
+            <select id="ordenar" name="ordenar">
+              <option value="calificacion">Mejor calificados</option>
+              <option value="precio_asc">Precio: menor a mayor</option>
+              <option value="precio_desc">Precio: mayor a menor</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+      </form>
+
+      <div class="results-bar">
+        <strong id="results-count">Cargando resultados...</strong>
+        <button class="btn btn-ghost btn-sm" type="button" id="btn-limpiar">Limpiar filtros</button>
+      </div>
+
+      <div id="resultados" class="grid grid-3"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/data/local-provider.js"></script>
+<script src="../assets/js/data/api-provider.js"></script>
+<script src="../assets/js/data/index.js"></script>
+<script src="../assets/js/ui.js"></script>
+<script src="../assets/js/pages/tutores.js"></script>
+</body>
+</html>

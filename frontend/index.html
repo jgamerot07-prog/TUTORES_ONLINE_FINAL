@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tutores On-Line — Encuentra al tutor ideal para ti</title>
+<meta name="description" content="Plataforma que conecta estudiantes con tutores calificados para clases virtuales y presenciales." />
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="hero-badge">⚡ Mas de 2 tutores verificados y creciendo</span>
+        <h1>Encuentra al tutor ideal y aprende a tu ritmo</h1>
+        <p class="lead">Conectamos estudiantes con tutores calificados en matematicas, fisica, programacion, idiomas y mas. Agenda clases virtuales o presenciales en minutos.</p>
+        <div class="hero-actions">
+          <a href="pages/tutores.html" class="btn btn-primary">Buscar un tutor</a>
+          <a href="pages/registro.html?rol=TUTOR" class="btn btn-secondary">Quiero ser tutor</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="stat-tutores">—</strong><span>Tutores activos</span></div>
+          <div><strong id="stat-materias">—</strong><span>Materias disponibles</span></div>
+          <div><strong>100%</strong><span>Reservas verificadas</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <h3 style="margin-bottom: .75rem;">Tutor destacado</h3>
+        <div id="hero-tutor-preview">
+          <div class="loading-state"><span class="spinner"></span><span>Cargando...</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Materias mas solicitadas</h2>
+        <p>Explora algunas de las areas en las que puedes encontrar un tutor ahora mismo.</p>
+      </div>
+      <div id="materias-pills" class="text-center">
+        <div class="loading-state"><span class="spinner"></span><span>Cargando materias...</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" style="background:var(--color-surface); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Como funciona?</h2>
+        <p>Reservar una tutoria toma menos de 5 minutos.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="how-step">
+          <span class="num"></span>
+          <div><h3>Busca y compara</h3><p>Filtra tutores por materia, modalidad y disponibilidad.</p></div>
+        </div>
+        <div class="how-step">
+          <span class="num"></span>
+          <div><h3>Reserva tu horario</h3><p>Elige fecha y hora disponibles y envia tu solicitud.</p></div>
+        </div>
+        <div class="how-step">
+          <span class="num"></span>
+          <div><h3>Aprende y califica</h3><p>Asiste a tu sesion virtual o presencial y deja tu reseña.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>¿Eres bueno en algo y quieres enseñar?</h2>
+        <p>Registrate como tutor, define tu tarifa y tu disponibilidad, y empieza a recibir solicitudes.</p>
+        <a href="pages/registro.html?rol=TUTOR" class="btn" style="background:#fff;color:var(--color-primary);">Registrarme como tutor</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data/local-provider.js"></script>
+<script src="assets/js/data/api-provider.js"></script>
+<script src="assets/js/data/index.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/pages/home.js"></script>
+</body>
+</html>

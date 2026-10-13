@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mi panel — Tutores On-Line</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="section section--tight">
+    <div class="container">
+      <div class="dashboard-layout">
+        <aside class="dashboard-sidebar">
+          <div class="profile-mini">
+            <span class="avatar-circle" id="side-avatar"></span>
+            <h3 id="side-nombre" style="margin:.5rem 0 0;"></h3>
+            <p class="text-muted" id="side-email" style="font-size:var(--fs-sm);"></p>
+          </div>
+          <nav class="dashboard-nav">
+            <button data-tab="reservas" class="active">📅 Mis reservas</button>
+            <button data-tab="perfil">👤 Mi perfil</button>
+            <button data-tab="notificaciones">🔔 Notificaciones <span id="badge-notif"></span></button>
+          </nav>
+        </aside>
+
+        <div>
+          <div class="stat-grid">
+            <div class="stat-card"><div class="value" id="stat-pendientes">0</div><div class="label">Pendientes</div></div>
+            <div class="stat-card"><div class="value" id="stat-aceptadas">0</div><div class="label">Aceptadas</div></div>
+            <div class="stat-card"><div class="value" id="stat-completadas">0</div><div class="label">Completadas</div></div>
+            <div class="stat-card"><div class="value" id="stat-total">0</div><div class="label">Total historico</div></div>
+          </div>
+
+          <section id="tab-reservas" class="tab-panel">
+            <div class="panel">
+              <div class="panel-header"><h3 style="margin:0;">Mis reservas</h3><a href="tutores.html" class="btn btn-primary btn-sm">Buscar tutor</a></div>
+              <div id="reservas-wrap"></div>
+            </div>
+          </section>
+
+          <section id="tab-perfil" class="tab-panel" style="display:none;">
+            <div class="panel">
+              <h3>Mi perfil</h3>
+              <form id="form-perfil" class="form-grid">
+                <div class="form-row">
+                  <div class="field"><label for="p-nombre">Nombre</label><input id="p-nombre" disabled /></div>
+                  <div class="field"><label for="p-apellido">Apellido</label><input id="p-apellido" disabled /></div>
+                </div>
+                <div class="field"><label for="p-email">Correo</label><input id="p-email" disabled /></div>
+                <div class="form-row">
+                  <div class="field"><label for="p-nivel">Nivel educativo</label>
+                    <select id="p-nivel"><option value="COLEGIO">Colegio</option><option value="PREGRADO">Pregrado</option><option value="POSGRADO">Posgrado</option><option value="OTRO">Otro</option></select>
+                  </div>
+                  <div class="field"><label for="p-institucion">Institucion</label><input id="p-institucion" /></div>
+                </div>
+                <p class="text-muted" style="font-size:var(--fs-xs);">El nombre y correo se gestionan desde soporte. Esta informacion se guarda localmente en modo demostracion.</p>
+                <button type="submit" class="btn btn-primary" style="width:fit-content;">Guardar cambios</button>
+              </form>
+            </div>
+          </section>
+
+          <section id="tab-notificaciones" class="tab-panel" style="display:none;">
+            <div class="panel">
+              <h3>Notificaciones</h3>
+              <div id="notif-wrap"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal-backdrop" id="modal-calificar">
+  <div class="modal">
+    <button class="modal-close" id="cerrar-modal" aria-label="Cerrar">&times;</button>
+    <h3>Califica tu tutoria</h3>
+    <form id="form-calificar" class="form-grid">
+      <input type="hidden" id="cal-id-reserva" />
+      <div class="field">
+        <label for="cal-puntuacion">Puntuacion</label>
+        <select id="cal-puntuacion">
+          <option value="5">★★★★★ Excelente</option>
+          <option value="4">★★★★ Muy bueno</option>
+          <option value="3">★★★ Bueno</option>
+          <option value="2">★★ Regular</option>
+          <option value="1">★ Malo</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cal-comentario">Comentario</label>
+        <textarea id="cal-comentario" maxlength="500" placeholder="Cuenta tu experiencia..."></textarea>
+      </div>
+      <div id="calificar-alert"></div>
+      <button type="submit" class="btn btn-primary btn-block">Enviar calificacion</button>
+    </form>
+  </div>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/data/local-provider.js"></script>
+<script src="../assets/js/data/api-provider.js"></script>
+<script src="../assets/js/data/index.js"></script>
+<script src="../assets/js/ui.js"></script>
+<script src="../assets/js/pages/dashboard-estudiante.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+erDiagram
+    USUARIOS {
+        number id_usuario PK
+        string nombre
+        string apellido
+        string email "UNIQUE"
+        string password_hash
+        string telefono
+        string rol "ESTUDIANTE / TUTOR / ADMIN"
+        string estado
+        timestamp fecha_registro
+    }
+
+    ESTUDIANTES {
+        number id_estudiante PK
+        number id_usuario FK "UNIQUE"
+        string nivel_educativo
+        string institucion
+    }
+
+    TUTORES {
+        number id_tutor PK
+        number id_usuario FK "UNIQUE"
+        clob biografia
+        number anios_experiencia
+        number tarifa_hora
+        string modalidad "VIRTUAL / PRESENCIAL / AMBAS"
+        string ciudad
+        string verificado
+        number calificacion_promedio
+    }
+
+    MATERIAS {
+        number id_materia PK
+        string nombre "UNIQUE"
+        string area
+        string descripcion
+    }
+
+    TUTOR_MATERIAS {
+        number id_tutor PK_FK
+        number id_materia PK_FK
+        string nivel_experiencia
+    }
+
+    DISPONIBILIDAD {
+        number id_disponibilidad PK
+        number id_tutor FK
+        string dia_semana
+        string hora_inicio
+        string hora_fin
+        string modalidad
+        string activo
+    }
+
+    RESERVAS {
+        number id_reserva PK
+        number id_estudiante FK
+        number id_tutor FK
+        number id_materia FK
+        date fecha_sesion
+        string hora_inicio
+        string hora_fin
+        string modalidad "VIRTUAL / PRESENCIAL"
+        string enlace_virtual
+        string ubicacion
+        string estado "PENDIENTE/ACEPTADA/RECHAZADA/CANCELADA/COMPLETADA"
+    }
+
+    CALIFICACIONES {
+        number id_calificacion PK
+        number id_reserva FK "UNIQUE"
+        number id_estudiante FK
+        number id_tutor FK
+        number puntuacion "1 a 5"
+        string comentario
+    }
+
+    NOTIFICACIONES {
+        number id_notificacion PK
+        number id_usuario FK
+        number id_reserva FK
+        string tipo
+        string mensaje
+        string leida
+    }
+
+    USUARIOS ||--o| ESTUDIANTES : "tiene rol de"
+    USUARIOS ||--o| TUTORES : "tiene rol de"
+    TUTORES ||--|{ TUTOR_MATERIAS : "dicta"
+    MATERIAS ||--|{ TUTOR_MATERIAS : "es dictada en"
+    TUTORES ||--|{ DISPONIBILIDAD : "ofrece"
+    ESTUDIANTES ||--|{ RESERVAS : "solicita"
+    TUTORES ||--|{ RESERVAS : "atiende"
+    MATERIAS ||--|{ RESERVAS : "trata sobre"
+    RESERVAS ||--o| CALIFICACIONES : "recibe"
+    ESTUDIANTES ||--|{ CALIFICACIONES : "escribe"
+    TUTORES ||--|{ CALIFICACIONES : "recibe"
+    USUARIOS ||--|{ NOTIFICACIONES : "recibe"
+    RESERVAS ||--o{ NOTIFICACIONES : "genera"

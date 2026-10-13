@@ -1,0 +1,10 @@
+{
+  "name": "tutores-online-final",
+  "private": true,
+  "description": "Proyecto academico Tutores On-Line: frontend, backend (API REST) y base de datos Oracle APEX.",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "frontend": "http-server frontend -p 8080 -c-1",
+    "backend": "npm --prefix backend run dev"
+  }
+}

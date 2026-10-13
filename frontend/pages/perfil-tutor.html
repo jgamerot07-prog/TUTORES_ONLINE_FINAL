@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Perfil de tutor — Tutores On-Line</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="section" id="perfil-wrap">
+    <div class="container">
+      <div class="loading-state" id="perfil-loading"><span class="spinner"></span><span>Cargando perfil...</span></div>
+
+      <div id="perfil-content" style="display:none;">
+        <div class="card profile-header">
+          <span class="avatar-circle" id="perfil-avatar"></span>
+          <div style="flex:1;min-width:220px;">
+            <h1 id="perfil-nombre" style="margin-bottom:.25rem;"></h1>
+            <p class="text-muted" id="perfil-meta"></p>
+            <div class="rating" id="perfil-rating"></div>
+          </div>
+          <div class="tag-list" id="perfil-materias"></div>
+        </div>
+
+        <div class="profile-grid">
+          <div>
+            <div class="panel">
+              <h3>Sobre mi</h3>
+              <p id="perfil-bio" class="text-muted"></p>
+            </div>
+
+            <div class="panel">
+              <h3>Disponibilidad semanal</h3>
+              <div id="perfil-disponibilidad" class="day-slot-grid"></div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header"><h3 style="margin:0;">Reseñas de estudiantes</h3></div>
+              <div id="perfil-resenas"></div>
+            </div>
+          </div>
+
+          <aside class="booking-box">
+            <div class="panel">
+              <h3>Reservar una tutoria</h3>
+              <form id="form-reserva" class="form-grid">
+                <div class="field">
+                  <label for="r-materia">Materia</label>
+                  <select id="r-materia" name="materia" required></select>
+                </div>
+
+                <div class="field" id="campo-modalidad">
+                  <label>Modalidad</label>
+                  <div class="modalidad-switch" id="modalidad-switch"></div>
+                </div>
+
+                <div class="field">
+                  <label for="r-fecha">Fecha</label>
+                  <input type="date" id="r-fecha" name="fecha" required />
+                  <span class="error-text" data-error-for="r-fecha"></span>
+                </div>
+
+                <div class="field">
+                  <label>Hora disponible</label>
+                  <div class="slot-pill-group" id="slot-pill-group">
+                    <span class="text-muted" style="font-size:var(--fs-sm);">Elige primero una fecha.</span>
+                  </div>
+                  <span class="error-text" data-error-for="r-hora"></span>
+                </div>
+
+                <div class="field" id="campo-ubicacion" style="display:none;">
+                  <label for="r-ubicacion">Lugar de encuentro</label>
+                  <input type="text" id="r-ubicacion" name="ubicacion" placeholder="Ej: Biblioteca CUC, sala 4" />
+                </div>
+
+                <div class="field">
+                  <label for="r-comentario">Cuentale al tutor que necesitas (opcional)</label>
+                  <textarea id="r-comentario" name="comentario" maxlength="500" placeholder="Ej: Necesito reforzar derivadas antes del parcial."></textarea>
+                </div>
+
+                <div id="reserva-alert"></div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="btn-reservar">
+                  <span class="btn-label">Enviar solicitud de tutoria</span>
+                </button>
+                <p class="text-muted" style="font-size:var(--fs-xs);text-align:center;">El tutor debe aceptar tu solicitud antes de confirmarse.</p>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div id="perfil-not-found" style="display:none;" class="empty-state">
+        <div class="icon">😕</div>
+        <p>No encontramos este tutor.</p>
+        <a href="tutores.html" class="btn btn-secondary">Volver a la busqueda</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/data/local-provider.js"></script>
+<script src="../assets/js/data/api-provider.js"></script>
+<script src="../assets/js/data/index.js"></script>
+<script src="../assets/js/ui.js"></script>
+<script src="../assets/js/pages/perfil-tutor.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Blueprint para desplegar el backend en Render.com (plan gratuito)
+# Uso: en Render → New → Blueprint → selecciona este repositorio.
+# Render detectara este archivo y creara el servicio automaticamente.
+services:
+  - type: web
+    name: tutores-online-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: CORS_ORIGIN
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: ORACLE_USER
+        sync: false
+      - key: ORACLE_PASSWORD
+        sync: false
+      - key: ORACLE_CONNECT_STRING
+        sync: false

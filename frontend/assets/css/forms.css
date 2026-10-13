@@ -1,0 +1,38 @@
+.form-grid { display: grid; gap: var(--space-4); }
+.form-row { display: grid; gap: var(--space-4); grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+
+.field { display: flex; flex-direction: column; gap: var(--space-1); }
+.field label { font-weight: 600; font-size: var(--fs-sm); }
+.field .hint { font-size: var(--fs-xs); color: var(--color-text-muted); }
+.field .error-text { font-size: var(--fs-xs); color: var(--color-danger); min-height: 1em; }
+
+input, select, textarea {
+  font-family: var(--font-base); font-size: var(--fs-base);
+  padding: 0.65rem 0.85rem; border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  background: var(--color-surface); color: var(--color-text); width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+textarea { resize: vertical; min-height: 100px; }
+
+.field.has-error input, .field.has-error select, .field.has-error textarea {
+  border-color: var(--color-danger);
+}
+.field.has-error .error-text::before { content: "⚠ "; }
+
+.checkbox-row { display: flex; align-items: flex-start; gap: var(--space-2); font-size: var(--fs-sm); }
+.checkbox-row input { width: auto; margin-top: 3px; }
+
+.role-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.role-option {
+  border: 2px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4);
+  cursor: pointer; text-align: center; transition: all .15s ease; background: var(--color-surface);
+}
+.role-option strong { display: block; margin-bottom: var(--space-1); }
+.role-option span { font-size: var(--fs-xs); color: var(--color-text-muted); }
+.role-option.selected { border-color: var(--color-primary); background: var(--color-primary-light); }
+
+.auth-card { max-width: 440px; margin: var(--space-8) auto; }
+.form-card { max-width: 640px; margin: 0 auto; }

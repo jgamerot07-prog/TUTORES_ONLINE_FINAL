@@ -1,0 +1,17 @@
+# Dependencias
+node_modules/
+backend/node_modules/
+
+# Variables de entorno con secretos reales
+.env
+backend/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operativo / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

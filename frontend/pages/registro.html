@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crear cuenta — Tutores On-Line</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="section">
+    <div class="container">
+      <div class="card auth-card">
+        <h2 class="text-center">Crea tu cuenta</h2>
+        <p class="text-center text-muted">Elige cómo quieres usar Tutores On-Line</p>
+
+        <div class="role-toggle" role="radiogroup" aria-label="Tipo de cuenta" id="role-toggle">
+          <div class="role-option selected" data-rol="ESTUDIANTE" role="radio" aria-checked="true" tabindex="0">
+            <strong>🎓 Soy estudiante</strong>
+            <span>Quiero encontrar un tutor</span>
+          </div>
+          <div class="role-option" data-rol="TUTOR" role="radio" aria-checked="false" tabindex="0">
+            <strong>📚 Soy tutor</strong>
+            <span>Quiero enseñar y generar ingresos</span>
+          </div>
+        </div>
+
+        <form id="form-registro" class="form-grid" novalidate style="margin-top:1.5rem;">
+          <div class="form-row">
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" autocomplete="given-name" required minlength="2" />
+              <span class="error-text" data-error-for="nombre"></span>
+            </div>
+            <div class="field">
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido" name="apellido" autocomplete="family-name" required minlength="2" />
+              <span class="error-text" data-error-for="apellido"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electronico</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+            <span class="error-text" data-error-for="email"></span>
+          </div>
+
+          <div class="field">
+            <label for="telefono">Telefono (opcional)</label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="300 123 4567" />
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="password">Contraseña</label>
+              <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8" />
+              <span class="hint">Minimo 8 caracteres, con letras y numeros.</span>
+              <span class="error-text" data-error-for="password"></span>
+            </div>
+            <div class="field">
+              <label for="password2">Confirmar contraseña</label>
+              <input type="password" id="password2" name="password2" autocomplete="new-password" required />
+              <span class="error-text" data-error-for="password2"></span>
+            </div>
+          </div>
+
+          <div id="campos-estudiante">
+            <div class="form-row">
+              <div class="field">
+                <label for="nivelEducativo">Nivel educativo</label>
+                <select id="nivelEducativo" name="nivelEducativo">
+                  <option value="COLEGIO">Colegio</option>
+                  <option value="PREGRADO" selected>Pregrado</option>
+                  <option value="POSGRADO">Posgrado</option>
+                  <option value="OTRO">Otro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="institucion">Institucion</label>
+                <input type="text" id="institucion" name="institucion" placeholder="Ej: Corporacion Universitaria de la Costa" />
+              </div>
+            </div>
+          </div>
+
+          <div id="campos-tutor" style="display:none;">
+            <div class="form-row">
+              <div class="field">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Barranquilla" />
+              </div>
+              <div class="field">
+                <label for="tarifaHora">Tarifa por hora (COP)</label>
+                <input type="number" id="tarifaHora" name="tarifaHora" min="0" step="1000" placeholder="30000" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="aniosExperiencia">Años de experiencia</label>
+                <input type="number" id="aniosExperiencia" name="aniosExperiencia" min="0" max="60" />
+              </div>
+              <div class="field">
+                <label for="modalidad">Modalidad que ofreces</label>
+                <select id="modalidad" name="modalidad">
+                  <option value="AMBAS" selected>Virtual y presencial</option>
+                  <option value="VIRTUAL">Solo virtual</option>
+                  <option value="PRESENCIAL">Solo presencial</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="materias">Materias que dominas</label>
+              <select id="materias" name="materias" multiple size="5"></select>
+              <span class="hint">Manten presionada Ctrl (o Cmd) para elegir varias.</span>
+            </div>
+            <div class="field">
+              <label for="biografia">Cuentanos sobre ti</label>
+              <textarea id="biografia" name="biografia" maxlength="500" placeholder="Tu experiencia, metodologia y lo que te hace un buen tutor..."></textarea>
+            </div>
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="terminos" name="terminos" required />
+            <label for="terminos">Acepto los terminos de uso y el tratamiento de mis datos personales.</label>
+          </div>
+          <span class="error-text" data-error-for="terminos"></span>
+
+          <div id="form-alert"></div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btn-submit">
+            <span class="btn-label">Crear cuenta</span>
+          </button>
+          <p class="text-center text-muted" style="margin-top:.5rem;">¿Ya tienes cuenta? <a href="login.html">Inicia sesion</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/data/local-provider.js"></script>
+<script src="../assets/js/data/api-provider.js"></script>
+<script src="../assets/js/data/index.js"></script>
+<script src="../assets/js/ui.js"></script>
+<script src="../assets/js/pages/registro.js"></script>
+</body>
+</html>

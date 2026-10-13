@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Centro de ayuda — Tutores On-Line</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="section">
+    <div class="container" style="max-width: 760px;">
+      <div class="section-title">
+        <h1>Centro de ayuda</h1>
+        <p>Preguntas frecuentes sobre la plataforma.</p>
+      </div>
+
+      <div class="panel">
+        <h3>¿Esta plataforma usa datos reales?</h3>
+        <p class="text-muted">Esta version funciona en <strong>modo demostracion</strong>: los datos que creas (cuentas, reservas, calificaciones) se guardan en tu navegador (localStorage), no en un servidor. Es ideal para evaluar el flujo completo sin necesitar un backend desplegado.</p>
+      </div>
+      <div class="panel">
+        <h3>¿Como contacto a mi tutor?</h3>
+        <p class="text-muted">Una vez que el tutor acepta tu solicitud, veras el enlace de videollamada (modalidad virtual) o el lugar de encuentro (modalidad presencial) en tu panel de reservas.</p>
+      </div>
+      <div class="panel">
+        <h3>¿Puedo cancelar una reserva?</h3>
+        <p class="text-muted">Si, mientras este en estado "Pendiente" puedes cancelarla desde tu panel de estudiante.</p>
+      </div>
+      <div class="panel">
+        <h3>¿Necesitas mas ayuda?</h3>
+        <p class="text-muted">Escribenos a <a href="mailto:soporte@tutoresonline.com">soporte@tutoresonline.com</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/data/local-provider.js"></script>
+<script src="../assets/js/data/api-provider.js"></script>
+<script src="../assets/js/data/index.js"></script>
+<script src="../assets/js/ui.js"></script>
+<script>UI.renderHeader(); UI.renderFooter();</script>
+</body>
+</html>

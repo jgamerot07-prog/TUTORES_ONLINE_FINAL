@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iniciar sesion — Tutores On-Line</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="section">
+    <div class="container">
+      <div class="card auth-card">
+        <h2 class="text-center">Inicia sesion</h2>
+        <p class="text-center text-muted">Accede a tu cuenta de estudiante o tutor</p>
+
+        <div class="alert alert-info" id="demo-hint">
+          <strong>Modo demostracion:</strong> prueba con <code>laura.martinez@tutoresonline.com</code> (tutor) o <code>juan.perez@estudiante.com</code> (estudiante), contraseña <code>Tutores2025*</code>.
+        </div>
+
+        <form id="form-login" class="form-grid" novalidate>
+          <div class="field">
+            <label for="email">Correo electronico</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+            <span class="error-text" data-error-for="email"></span>
+          </div>
+          <div class="field">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required />
+            <span class="error-text" data-error-for="password"></span>
+          </div>
+
+          <div id="form-alert"></div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btn-submit">
+            <span class="btn-label">Iniciar sesion</span>
+          </button>
+          <p class="text-center text-muted" style="margin-top:.5rem;">¿No tienes cuenta? <a href="registro.html">Registrate aqui</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/data/local-provider.js"></script>
+<script src="../assets/js/data/api-provider.js"></script>
+<script src="../assets/js/data/index.js"></script>
+<script src="../assets/js/ui.js"></script>
+<script src="../assets/js/pages/login.js"></script>
+</body>
+</html>
